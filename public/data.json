@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A journey of a shepherd boy who dreams of finding treasure and discovers life's true meaning.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://i.ibb.co.com/ZzNkXMv6/9781949846386.avif"
+  },
+  {
+    "id": 2,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "A guide to building good habits and breaking bad ones through small changes.",
+    "category": "Tech",
+    "available_quantity": 18,
+    "image_url": "https://images.unsplash.com/photo-1519682577862-22b62b24e493?w=800"
+  },
+  {
+    "id": 3,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "Explores cosmology, black holes, and the universe in simple terms.",
+    "category": "Science",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800"
+  },
+  {
+    "id": 4,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "Best practices for writing clean, maintainable software code.",
+    "category": "Tech",
+    "available_quantity": 15,
+    "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800"
+  },
+  {
+    "id": 5,
+    "title": "The Theory of Everything",
+    "author": "Stephen Hawking",
+    "description": "A look into the origins and structure of the universe.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800"
+  },
+  {
+    "id": 6,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "description": "A young wizard discovers his magical destiny at Hogwarts.",
+    "category": "Story",
+    "available_quantity": 25,
+    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800"
+  },
+  {
+    "id": 7,
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "description": "Deep dive into JavaScript core concepts and behavior.",
+    "category": "Tech",
+    "available_quantity": 20,
+    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+  },
+  {
+    "id": 8,
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "description": "An astronaut survives alone on Mars using science and engineering.",
+    "category": "Science",
+    "available_quantity": 11,
+    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
+  },
+  {
+    "id": 9,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "A tragic story of love, wealth, and ambition in the Jazz Age.",
+    "category": "Story",
+    "available_quantity": 14,
+    "image_url": "https://i.ibb.co.com/ZzNkXMv6/9781949846386.avif"
+  },
+  {
+    "id": 10,
+    "title": "Python Crash Course",
+    "author": "Eric Matthes",
+    "description": "A beginner-friendly guide to learning Python programming.",
+    "category": "Tech",
+    "available_quantity": 30,
+    "image_url": "https://i.ibb.co.com/kVtB7k2y/2.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "A journey through space, time, and human understanding of the universe.",
+    "category": "Science",
+    "available_quantity": 10,
+    "image_url": "https://i.ibb.co.com/wZ44Vhqt/3.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "description": "A fantasy adventure of Bilbo Baggins and his unexpected journey.",
+    "category": "Story",
+    "available_quantity": 22,
+    "image_url": "https://i.ibb.co.com/pvGM9Hnq/4.png"
+  }
+]
