@@ -41,8 +41,8 @@ const BookCard = ({ book }) => {
 
         {/* Button */}
         <button
-          onClick={handleBorrow}
-          className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
+          onClick={()=>handleBorrow(isLoggedIn)}
+          className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
         >
           View Details
         </button>

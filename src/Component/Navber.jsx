@@ -49,12 +49,6 @@ const Navbar = () => {
               All Books
             </Link>
           </li>
-
-          <li>
-            <Link href="/profile" className="text-white">
-              My Profile
-            </Link>
-          </li>
         </ul>
 
         {/* Desktop Auth */}
@@ -72,6 +66,17 @@ const Navbar = () => {
               <Button color="danger" size="sm" onClick={handleLogout}>
                 Logout
               </Button>
+              <Link href="/profile">
+                <div className="cursor-pointer">
+                  <img
+                    src="/profile.png"
+                    alt="Profile"
+                    width={50}
+                    height={50}
+                    className="rounded-full border-2 border-amber-100"
+                  />
+                </div>
+              </Link>
             </>
           )}
         </div>
