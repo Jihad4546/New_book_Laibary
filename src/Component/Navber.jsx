@@ -69,10 +69,10 @@ const Navbar = () => {
               <Link href="/profile">
                 <div className="cursor-pointer">
                   <img
-                    src="/profile.png"
+                    src='/profile.jpg'
                     alt="Profile"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     className="rounded-full border-2 border-amber-100"
                   />
                 </div>
