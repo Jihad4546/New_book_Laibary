@@ -1,23 +1,35 @@
 'use client'
 import { authClient } from "@/lib/auth-client";
-import { FieldError, Form, Label, TextField } from "@heroui/react";
+import { Button, Form, Label } from "@heroui/react";
+import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const longInPage = () => {
 
-    const onSubmit =async (e) =>{
+    const onSubmit = async (e) => {
         e.preventDefault();
-        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value
 
-        const {data, error} = await authClient.signUp.email({
-            name, 
-            email, 
+        const { data, error } = await authClient.signIn.email({
+            email,
             password,
+            callbackURL: "/"
         });
-        console.log({data, error})
-    }
 
+
+        if (error) {
+            toast.error(error.message || 'login filed')
+        }
+        console.log({ email, password })
+
+    }
+  const handleGoogleAuth =async()=>{
+        await authClient.signIn.social({
+            provider:"google"
+        })
+  }
 
     return (
         <Form onSubmit={onSubmit} className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-2xl p-6 space-y-5 border border-gray-200">
@@ -30,7 +42,7 @@ const longInPage = () => {
                     Email Address
                 </Label>
                 <input
-                required
+                    required
                     type="email"
                     name="email"
                     placeholder="Enter your email"
@@ -43,7 +55,7 @@ const longInPage = () => {
                     Password
                 </Label>
                 <input
-                required
+                    required
                     type="password"
                     name="password"
                     placeholder="Enter your password"
@@ -55,9 +67,19 @@ const longInPage = () => {
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300"
             >
-                Submit
+                Log in
             </button>
-
+            <div className="flex space-x-3 ">
+                <h1>Don’t have an account?</h1>
+                <Link className="text-blue-500 underline cursor-pointer" href='/singup'>
+                    SignUp</Link>
+            </div>
+            <Button 
+            onClick={handleGoogleAuth}
+            variant="outline" className="w-full flex items-center justify-center gap-2">
+                <FaGoogle />
+                Log In with Google
+            </Button>
         </Form>
     );
 };

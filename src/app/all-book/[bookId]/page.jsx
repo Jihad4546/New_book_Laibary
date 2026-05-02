@@ -1,14 +1,16 @@
 
 import { Card, Button } from "@heroui/react";
 import Link from "next/link";
+import Brrowing from '@/Component/Brrowing'
 const BookDetailsPage = async ({ params }) => {
 
   
     const { bookId } = await params;
-    const res = await fetch('https://new-book-laibary-hg6wzk0qt-hasanjihad4546-8977s-projects.vercel.app/data.json');
+    const res = await fetch('http://localhost:3000/data.json' , {cache:'no-store'});
     const books = await res.json();
     const book = books.find(p => p.id == bookId);
-    console.log(book)
+   
+    
 
     
     return (
@@ -42,7 +44,7 @@ const BookDetailsPage = async ({ params }) => {
                         </p>
 
                         <p className="text-yellow-500 font-semibold">
-                           available_quantity:  {book.available_quantity} 
+                         available: {book.available_quantity} copies left
                         </p>
 
 
@@ -53,14 +55,8 @@ const BookDetailsPage = async ({ params }) => {
                                 Borrow Book
                             </Button>
 
-                            <Link href="/all-book">
-                                <button className="px-6 py-2 rounded-xl text-white font-semibold 
-                                    bg-linear-to-r from-emerald-400 via-green-500 to-teal-500
-                                    shadow-md hover:shadow-xl transform hover:scale-105 
-                                    transition-all duration-300">
-                                    ← Back
-                                </button>
-                            </Link>
+                          <Brrowing>
+                          </Brrowing>
 
                         </div>
 

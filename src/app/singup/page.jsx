@@ -1,21 +1,38 @@
 'use client'
 import { authClient } from "@/lib/auth-client";
-import { FieldError, Form, Label, TextField } from "@heroui/react";
+import { Button, FieldError, Form, Label, TextField } from "@heroui/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SingUpPage = () => {
 
-    const onSubmit =async (e) =>{
+    const router = useRouter()
+
+    const onSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value
 
-        const {data, error} = await authClient.signUp.email({
-            name, 
-            email, 
+        const { data, error } = await authClient.signUp.email({
+            name,
+            email,
             password,
         });
-        console.log({data, error})
+        if (data) {
+            toast.success("SingUp Successful 🎉")
+            router.push('/login')
+        }
+        if (error) {
+            toast.error(error.message || "Signup failed")
+        }
+    }
+    const handleGoogleAuth = async () => {
+        await authClient.signIn.social({
+            provider: "google"
+        });
     }
 
 
@@ -45,7 +62,7 @@ const SingUpPage = () => {
                     Email Address
                 </Label>
                 <input
-                required
+                    required
                     type="email"
                     name="email"
                     placeholder="Enter your email"
@@ -58,10 +75,22 @@ const SingUpPage = () => {
                     Password
                 </Label>
                 <input
-                required
+                    required
                     type="password"
                     name="password"
                     placeholder="Enter your password"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                />
+            </div>
+            <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700">
+                    Image URL
+                </Label>
+                <input
+                    required
+                    type="text"
+                    name="image"
+                    placeholder="Enter your Image Url"
                     className="w-full px-4 py-2 border border-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 />
             </div>
@@ -70,8 +99,21 @@ const SingUpPage = () => {
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300"
             >
-                Submit
+                SingUp
             </button>
+
+            <div className="flex space-x-3">
+                <h1> Already have an account? </h1>
+                <Link href='/login'>
+                    <Button className='text-blue-700 underline  cursor-pointer'>Log In</Button>
+                </Link>
+            </div>
+            <Button
+                onClick={handleGoogleAuth}
+                variant="outline" className="w-full flex items-center justify-center gap-2">
+                <FaGoogle />
+                Log In with Google
+            </Button>
 
         </Form>
     );

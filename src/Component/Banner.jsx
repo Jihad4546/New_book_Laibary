@@ -37,7 +37,7 @@ const Banner = () => {
           | 🎉 মেম্বারশিপে বিশেষ ছাড় চলছে!
         </marquee>
 
-        <Link href="/all-books">
+        <Link href="/all-book">
           <br />
           <button className="my-5 rounded-full bg-white px-8 py-3 text-lg font-semibold text-indigo-900 transition hover:bg-gray-200">
             Browse Now

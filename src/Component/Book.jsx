@@ -3,7 +3,7 @@ import React from 'react';
 import BookCard from './BookCard';
 
 const Book = async () => {
-    const res = await fetch('https://new-book-laibary-hg6wzk0qt-hasanjihad4546-8977s-projects.vercel.app/data.json');
+    const res = await fetch('http://localhost:3000/data.json' , {cache:'no-store'});
     const books = await res.json();
 
     const bookShortData = books.slice(0-4);

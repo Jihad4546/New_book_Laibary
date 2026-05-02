@@ -1,20 +1,25 @@
 'use client'
 import { Card } from "@heroui/react";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 const BookCard = ({ book }) => {
-  // const router = useRouter();
-  // const [isLoggedIn] = useState(false);
-
-  // const handleBorrow = () => {
-  //   if (!isLoggedIn) {
-  //     router.push("/login"); 
-  //   } else {
-  //     router.push(`/all-book/${book.id}`); 
-  //   }
-  // };
+  
+  const router = useRouter();
+    const { data: session } = authClient.useSession();
+  
+    const handleBorrow = () => {
+      if (!session) {
+        toast.error("Please login first!");
+        router.push("/login");
+        return;
+      }
+  
+      router.push(`/all-book/${book.id}`)
+  
+    };
 
   return (
     <Card className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition hover:-translate-y-2 hover:shadow-2xl">
@@ -39,13 +44,17 @@ const BookCard = ({ book }) => {
         </p>
 
         {/* Button */}
-        <Link href={`/all-book/${book.id}`}>
-          <button
-            className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
-          >
-            View Details
+        
+       
+        
+         
+          <button 
+
+          onClick={handleBorrow}
+           className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
+          > View Details
           </button>
-        </Link>
+      
 
 
       </div>
