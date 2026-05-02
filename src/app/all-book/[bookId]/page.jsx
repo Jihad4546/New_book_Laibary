@@ -5,7 +5,7 @@ const BookDetailsPage = async ({ params }) => {
 
   
     const { bookId } = await params;
-    const res = await fetch('http://localhost:3000/data.json');
+    const res = await fetch('https://new-book-laibary-hg6wzk0qt-hasanjihad4546-8977s-projects.vercel.app/data.json');
     const books = await res.json();
     const book = books.find(p => p.id == bookId);
     console.log(book)

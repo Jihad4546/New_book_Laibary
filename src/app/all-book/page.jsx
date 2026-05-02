@@ -9,7 +9,7 @@ const AllBookPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/data.json");
+      const res = await fetch("https://new-book-laibary-hg6wzk0qt-hasanjihad4546-8977s-projects.vercel.app/data.json");
       const data = await res.json();
 
       setBooks(data);
