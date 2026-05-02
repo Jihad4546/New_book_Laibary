@@ -3,7 +3,7 @@ import React from 'react';
 import BookCard from './BookCard';
 
 const Book = async () => {
-    const res = await fetch('http://localhost:3000/data.json' , {cache:'no-store'});
+    const res = await fetch('https://online-book-borrowing-platform-three.vercel.app/data.json' , {cache:'no-store'});
     const books = await res.json();
 
     const bookShortData = books.slice(0-4);
