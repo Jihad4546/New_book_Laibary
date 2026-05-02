@@ -14,12 +14,14 @@ const SingUpPage = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
-        const password = e.target.password.value
+        const password = e.target.password.value;
+        const image = e.target.image.value;
 
         const { data, error } = await authClient.signUp.email({
             name,
             email,
             password,
+            image,
         });
         if (data) {
             toast.success("SingUp Successful 🎉")
