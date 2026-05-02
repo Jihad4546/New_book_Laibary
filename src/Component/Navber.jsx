@@ -94,7 +94,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link href="/books" className="text-white">
+              <Link href="/all-book" className="text-white">
                 All Books
               </Link>
             </li>

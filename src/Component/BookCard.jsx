@@ -1,12 +1,10 @@
 'use client'
 import { Card } from "@heroui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const BookCard = ({ book }) => {
   const router = useRouter();
-
-  // demo login state (real app e auth thakbe)
   const [isLoggedIn] = useState(false);
 
   const handleBorrow = () => {
@@ -41,7 +39,7 @@ const BookCard = ({ book }) => {
 
         {/* Button */}
         <button
-          onClick={()=>handleBorrow(isLoggedIn)}
+          onClick={handleBorrow}
           className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
         >
           View Details

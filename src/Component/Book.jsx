@@ -1,5 +1,4 @@
-import { Card } from '@heroui/react';
-import Link from 'next/link';
+
 import React from 'react';
 import BookCard from './BookCard';
 

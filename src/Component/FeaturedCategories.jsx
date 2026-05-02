@@ -4,7 +4,7 @@ import React from "react";
 const FeaturedCategories = () => {
   const categories = [
     { name: "Fiction", icon: "📖" },
-    { name: "Technology", icon: "💻" },
+    { name: "Book", icon: "💻" },
     { name: "History", icon: "🏺" },
     { name: "Science", icon: "🔬" },
   ];
@@ -22,7 +22,7 @@ const FeaturedCategories = () => {
             className="p-6 text-center rounded-2xl shadow-md border hover:shadow-xl transition cursor-pointer"
           >
             <div className="text-4xl">{cat.icon}</div>
-            <h3 className="mt-2 font-semibold text-lg">{cat.name}</h3>
+            <h3 className="mt-2 text-lg font-semibold ">{cat.name}</h3>
           </div>
         ))}
       </div>
