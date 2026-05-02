@@ -26,7 +26,7 @@ const AllBookPage = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen  justify-center bg-gray-100">
+    <div className="container mx-auto flex flex-col min-h-screen  justify-center ">
 
       <div className="text-center w-full max-w-2xl px-4 flex flex-col justify-center mx-auto my-5">
 

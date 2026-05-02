@@ -2,18 +2,19 @@
 import { Card } from "@heroui/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const BookCard = ({ book }) => {
-  const router = useRouter();
-  const [isLoggedIn] = useState(false);
+  // const router = useRouter();
+  // const [isLoggedIn] = useState(false);
 
-  const handleBorrow = () => {
-    if (!isLoggedIn) {
-      router.push("/login"); 
-    } else {
-      router.push(`/all-book/${book.id}`); 
-    }
-  };
+  // const handleBorrow = () => {
+  //   if (!isLoggedIn) {
+  //     router.push("/login"); 
+  //   } else {
+  //     router.push(`/all-book/${book.id}`); 
+  //   }
+  // };
 
   return (
     <Card className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition hover:-translate-y-2 hover:shadow-2xl">
@@ -38,12 +39,14 @@ const BookCard = ({ book }) => {
         </p>
 
         {/* Button */}
-        <button
-          onClick={handleBorrow}
-          className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
-        >
-          View Details
-        </button>
+        <Link href={`/all-book/${book.id}`}>
+          <button
+            className="w-full rounded-xl bg-linear-to-r from-blue-600 to-indigo-700 px-4 py-2 font-medium text-white transition hover:from-indigo-700 hover:to-purple-700"
+          >
+            View Details
+          </button>
+        </Link>
+
 
       </div>
     </Card>

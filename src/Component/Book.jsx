@@ -10,7 +10,7 @@ const Book = async () => {
 
 
     return (
-        <div>
+        <div className='container mx-auto'>
             <h1 className='text-center font-bold text-4xl my-10'>Books Data</h1>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {bookShortData.map((book) => <BookCard book={book} key={book.id}></BookCard>

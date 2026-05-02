@@ -1,8 +1,6 @@
 
 import { Card, Button } from "@heroui/react";
 import Link from "next/link";
-import { useState } from "react";
-
 const BookDetailsPage = async ({ params }) => {
 
   

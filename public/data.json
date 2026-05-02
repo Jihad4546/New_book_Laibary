@@ -24,7 +24,7 @@
     "description": "Explores cosmology, black holes, and the universe in simple terms.",
     "category": "Science",
     "available_quantity": 9,
-    "image_url": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800"
+    "image_url": "https://i.ibb.co.com/nVb2bWp/images.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "Best practices for writing clean, maintainable software code.",
     "category": "Tech",
     "available_quantity": 15,
-    "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800"
+    "image_url": "https://i.ibb.co.com/wZWg6wJz/images-1.jpg"
   },
   {
     "id": 5,
@@ -60,7 +60,7 @@
     "description": "Deep dive into JavaScript core concepts and behavior.",
     "category": "Tech",
     "available_quantity": 20,
-    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+    "image_url": "https://i.ibb.co.com/5WBt0txq/images-2.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "An astronaut survives alone on Mars using science and engineering.",
     "category": "Science",
     "available_quantity": 11,
-    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
+    "image_url": "https://i.ibb.co.com/yB8hT54C/images-3.jpg"
   },
   {
     "id": 9,
