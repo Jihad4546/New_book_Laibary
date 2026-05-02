@@ -11,20 +11,36 @@ const ProfilePage = () => {
     "https://i.pravatar.cc/150"
   );
 
+  // 🔥 Cloudinary upload function
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await res.json();
+    return data.secure_url;
+  };
+
   const borrowedBooks = [
     {
       id: 1,
       title: "Atomic Habits",
       image:
         "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop",
-      status: "Borrowed",
     },
     {
       id: 2,
       title: "Atomic",
       image:
         "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop",
-      status: "Borrowed",
     },
   ];
 
@@ -49,31 +65,33 @@ const ProfilePage = () => {
               {isEditing ? (
                 <div className="space-y-4">
 
-                  {/* Name Input */}
+                  {/* Name */}
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter your name"
-                    className="w-full rounded-xl border border-gray-300 p-3 outline-none text-black"
+                    className="w-full rounded-xl border p-3 text-black"
                   />
 
-                  {/* Image URL Input */}
+                  {/* File Upload */}
                   <input
-                    type="text"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    placeholder="Enter image URL"
-                    className="w-full rounded-xl border border-gray-300 p-3 outline-none text-black"
-                  />
+                    type="file"
+                    accept="image/*"
+                    className="w-full rounded-xl border p-3 text-black"
+                    onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
 
+                      const url = await uploadImage(file);
+                      setImage(url);
+                    }}
+                  />
                 </div>
               ) : (
                 <div>
                   <h1 className="text-3xl font-bold text-gray-800">
                     {name}
                   </h1>
-
                   <p className="mt-2 text-gray-500">
                     noman@example.com
                   </p>
@@ -81,14 +99,15 @@ const ProfilePage = () => {
               )}
             </div>
 
-            {/* Edit Button */}
+            {/* Edit / Save Button */}
             <Button
               onClick={() => setIsEditing(!isEditing)}
               radius="lg"
-              className="p-2 cursor-pointer rounded-2xl bg-linear-to-r from-indigo-500 to-purple-600 text-white"
+              className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
             >
               {isEditing ? "Save Profile" : "Edit Profile"}
             </Button>
+
           </div>
         </Card>
 
@@ -107,26 +126,18 @@ const ProfilePage = () => {
                 className="flex flex-col sm:flex-row gap-4 rounded-2xl border p-4"
               >
 
-                {/* Book Image */}
                 <img
                   src={book.image}
                   alt={book.title}
                   className="h-40 w-full sm:h-28 sm:w-24 rounded-xl object-cover"
                 />
 
-                {/* Book Content */}
                 <div className="flex flex-1 flex-col justify-between gap-3">
-
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold">
-                      {book.title}
-                    </h3>
-                  </div>
+                  <h3 className="text-lg font-bold">{book.title}</h3>
 
                   <Button
                     size="sm"
-                    radius="lg"
-                    className="w-full sm:w-auto bg-linear-to-r from-indigo-500 to-purple-600 text-white"
+                    className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
                   >
                     Details
                   </Button>
@@ -138,6 +149,7 @@ const ProfilePage = () => {
           </div>
 
         </Card>
+
       </div>
     </div>
   );
