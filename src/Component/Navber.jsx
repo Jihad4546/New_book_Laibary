@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-white/10 bg-linear-to-r from-blue-900 via-indigo-900 to-purple-900 backdrop-blur-lg">
+    <nav className="sticky top-0 z-40 w-full border-b border-white/10 bg-linear-to-r from-blue-900 via-indigo-900 to-purple-900 backdrop-blur-lg justify-between items-center">
       <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
 
         {/* Left Side */}
@@ -46,7 +46,7 @@ const Navbar = () => {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
 
-          <Link href="/" className="text-lg font-bold text-white">
+          <Link href="/" className="text-lg font-bold text-white mt-4">
              <img
              width={240}
              height={240}

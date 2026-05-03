@@ -19,9 +19,11 @@ const Banner = () => {
 
       <div className="relative z-10 max-w-3xl text-center">
 
-        <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl">
+        <h1 className=" mb-6 text-4xl font-extrabold leading-tight md:text-6xl">
           Find Your Next Read
         </h1>
+        <h1 className="animate__animated animate__bounce">An animated element</h1>
+
 
         <p className="mb-8 text-lg text-gray-200 md:text-xl">
           Discover thousands of books from your favorite authors and explore your next adventure.
