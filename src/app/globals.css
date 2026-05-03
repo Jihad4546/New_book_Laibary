@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@import 'animate.css';
+@import "@heroui/styles"; 
 
 :root {
   /* Override any color variable */

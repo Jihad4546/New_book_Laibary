@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import { Card, Button, Avatar } from "@heroui/react";
+import { Card, Button, Avatar,  } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = React.useState(false);
@@ -10,15 +12,17 @@ const ProfilePage = () => {
   const [image, setImage] = React.useState(
     "https://i.pravatar.cc/150"
   );
+  const { data: session } = authClient.useSession();
+  
+    const email = session?.user.email;
 
-  // 🔥 Cloudinary upload function
   const uploadImage = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+    formData.append("upload_preset", "my_preset");
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+      "https://api.cloudinary.com/v1_1/my_cloud_name/image/upload",
       {
         method: "POST",
         body: formData,
@@ -26,6 +30,8 @@ const ProfilePage = () => {
     );
 
     const data = await res.json();
+
+    console.log(data)
     return data.secure_url;
   };
 
@@ -48,24 +54,20 @@ const ProfilePage = () => {
     <div className="min-h-screen bg-slate-100 p-6">
       <div className="mx-auto max-w-5xl space-y-8">
 
-        {/* Profile Card */}
+        
         <Card className="rounded-3xl p-8 shadow-xl">
 
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
 
-            {/* Avatar */}
-            <Avatar
-              src={image}
-              className="h-32 w-32 border-4 border-indigo-500"
-            />
+            
+            <img src={image} alt="" />
 
-            {/* Profile Info */}
+         
             <div className="flex-1 space-y-4">
 
               {isEditing ? (
                 <div className="space-y-4">
 
-                  {/* Name */}
                   <input
                     type="text"
                     value={name}
@@ -73,7 +75,6 @@ const ProfilePage = () => {
                     className="w-full rounded-xl border p-3 text-black"
                   />
 
-                  {/* File Upload */}
                   <input
                     type="file"
                     accept="image/*"
@@ -93,17 +94,16 @@ const ProfilePage = () => {
                     {name}
                   </h1>
                   <p className="mt-2 text-gray-500">
-                    noman@example.com
+                    {email}
                   </p>
                 </div>
               )}
             </div>
 
-            {/* Edit / Save Button */}
             <Button
               onClick={() => setIsEditing(!isEditing)}
               radius="lg"
-              className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+              className="p-3 rounded-full bg-linear-to-r from-indigo-500 to-purple-600 text-white"
             >
               {isEditing ? "Save Profile" : "Edit Profile"}
             </Button>

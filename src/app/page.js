@@ -5,7 +5,7 @@ import FeaturedCategories from "@/Component/FeaturedCategories"
 
 export default function Home() {
   return (
-    <div>
+    <div className="animate__animated animate__fadeInUp">
       <Banner></Banner>
       <Book></Book>
       <FeaturedCategories>

@@ -2,6 +2,12 @@
 
 import Link from 'next/link';
 import React from 'react';
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -11,25 +17,66 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold">Book Shop</h2>
+
           <p className="mt-3 text-sm text-gray-300">
             Discover your next favorite book. Read, explore, and enjoy endless stories.
           </p>
+
+          {/* Social Icons */}
+          <div className="mt-5 flex items-center gap-4">
+
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              className="rounded-full bg-white/10 p-3 transition hover:bg-blue-600"
+            >
+              <FaFacebookF size={18} />
+            </Link>
+
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              className="rounded-full bg-white/10 p-3 transition hover:bg-pink-500"
+            >
+              <FaInstagram size={18} />
+            </Link>
+
+            <Link
+              href="https://twitter.com"
+              target="_blank"
+              className="rounded-full bg-white/10 p-3 transition hover:bg-sky-500"
+            >
+              <FaTwitter size={18} />
+            </Link>
+
+            <Link
+              href="https://github.com"
+              target="_blank"
+              className="rounded-full bg-white/10 p-3 transition hover:bg-gray-700"
+            >
+              <FaGithub size={18} />
+            </Link>
+
+          </div>
         </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+
           <ul className="space-y-2 text-gray-300">
             <li>
               <Link href="/" className="hover:text-white">
                 Home
               </Link>
             </li>
+
             <li>
               <Link href="/all-book" className="hover:text-white">
                 All Books
               </Link>
             </li>
+
             <li>
               <Link href="/profile" className="hover:text-white">
                 My Profile
@@ -41,9 +88,11 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="mb-4 text-lg font-semibold">Contact</h3>
+
           <p className="text-sm text-gray-300">
             Email: support@bookshop.com
           </p>
+
           <p className="text-sm text-gray-300">
             Phone: +880 1234 567 890
           </p>
