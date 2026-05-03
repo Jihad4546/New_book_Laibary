@@ -20,13 +20,13 @@ Smooth animations using Animate.css
 Fully responsive (mobile + desktop)
 
 NPM Packages Used
-next
-react
-react-dom
-tailwindcss
-animate.css
-@heroui/styles
-react-toastify
-geist/font (next/font/google)
+next,
+react,
+react-dom,
+tailwindcss,
+animate.css,
+@heroui/styles,
+react-toastify,
+geist/font (next/font/google),
 
 
