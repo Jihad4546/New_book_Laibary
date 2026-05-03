@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, Button } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = React.useState(false);
@@ -11,7 +12,6 @@ const ProfilePage = () => {
   const { data: session } = authClient.useSession();
   const email = session?.user.email;
 
-  // ✅ Upload image to imgbb
   const uploadImage = async (file) => {
     try {
       const formData = new FormData();
@@ -24,14 +24,18 @@ const ProfilePage = () => {
 
       const data = await res.json();
 
+      if(data.success){
+        toast.success('Profile Updated')
+      }
+      
       if (!data.success) {
-        console.error("Upload failed:", data);
+        toast.error("Upload failed:", data);
         return null;
       }
 
       return data.data.display_url; // ✅ correct field
     } catch (err) {
-      console.error(err);
+      toast.error(err);
       return null;
     }
   };
