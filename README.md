@@ -22,6 +22,7 @@ Fully responsive (mobile + desktop)
 NPM Packages Used
 nextjs,
 react,
+React-Spring,
 react-dom,
 tailwindcss,
 animate.css,
