@@ -1,6 +1,5 @@
 
 import { Card, Button } from "@heroui/react";
-import Link from "next/link";
 import Brrowing from '@/Component/Brrowing'
 const BookDetailsPage = async ({ params }) => {
 
@@ -44,7 +43,7 @@ const BookDetailsPage = async ({ params }) => {
                         </p>
 
                         <p className="text-yellow-500 font-semibold">
-                         available: {book.available_quantity} copies left
+                         Available Quantity: {book.available_quantity} copies left
                         </p>
 
 

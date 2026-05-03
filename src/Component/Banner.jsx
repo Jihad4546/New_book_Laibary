@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Anemated from './Anemated';
 
 const Banner = () => {
   return (
@@ -14,7 +15,6 @@ const Banner = () => {
       }}
     >
 
-      {/* gray overlay */}
       <div className="absolute inset-0 bg-gray-900/60"></div>
 
       <div className="relative z-10 max-w-3xl text-center">
@@ -22,7 +22,10 @@ const Banner = () => {
         <h1 className=" mb-6 text-4xl font-extrabold leading-tight md:text-6xl">
           Find Your Next Read
         </h1>
-        <h1 className="animate__animated animate__bounce">An animated element</h1>
+
+        <h1 className="animate__animated animate__bounce animate__infinite">
+          An animated element
+        </h1>
 
 
         <p className="mb-8 text-lg text-gray-200 md:text-xl">
@@ -39,13 +42,8 @@ const Banner = () => {
           | 🎉 মেম্বারশিপে বিশেষ ছাড় চলছে!
         </marquee>
 
-        <Link href="/all-book">
-          <br />
-          <button className="my-5 rounded-full bg-white px-8 py-3 text-lg font-semibold text-indigo-900 transition hover:bg-gray-200">
-            Browse Now
-          </button>
-        </Link>
-
+      
+        <Anemated></Anemated>
       </div>
 
     </section>

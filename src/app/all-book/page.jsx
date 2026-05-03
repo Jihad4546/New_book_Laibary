@@ -63,7 +63,6 @@ const AllBookPage = () => {
 
       <div className="flex flex-col gap-6 lg:flex-row">
 
-        {/* Sidebar */}
         <div className="w-full rounded-3xl bg-white p-6 shadow-xl lg:w-72 h-fit">
 
           <h2 className="mb-6 text-2xl font-bold text-gray-800">
@@ -89,10 +88,8 @@ const AllBookPage = () => {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="flex-1">
 
-          {/* Search */}
           <div className="mx-auto mb-8 w-full max-w-2xl">
 
             <h1 className="mb-5 text-center text-4xl font-bold text-gray-800">
@@ -118,8 +115,7 @@ const AllBookPage = () => {
             </div>
           </div>
 
-          {/* Books */}
-          <div className="animate__animated animate__fadeInUp grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
 
             {filter.length > 0 ? (
               filter.map((book) => (

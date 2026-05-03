@@ -25,6 +25,7 @@ const SingUpPage = () => {
         });
         if (data) {
             toast.success("SingUp Successful 🎉")
+              await authClient.signOut();
             router.push('/login')
         }
         if (error) {
@@ -101,7 +102,7 @@ const SingUpPage = () => {
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300"
             >
-                SingUp
+                Register 
             </button>
 
             <div className="flex space-x-3">

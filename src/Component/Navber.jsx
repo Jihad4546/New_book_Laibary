@@ -6,7 +6,6 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
-import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +35,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-40 w-full border-b border-white/10 bg-linear-to-r from-blue-900 via-indigo-900 to-purple-900 backdrop-blur-lg justify-between items-center">
       <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
 
-        {/* Left Side */}
+        
         <div className="flex items-center gap-4">
 
           <button
@@ -55,8 +54,6 @@ const Navbar = () => {
              </img>
           </Link>
         </div>
-
-        {/* Desktop Menu */}
         <ul className="hidden items-center gap-6 md:flex">
           <li>
             <Link href="/" className="text-white">Home</Link>
@@ -73,7 +70,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Auth */}
         <div className="hidden items-center gap-3 md:flex">
           {!isLoggedIn ? (
             <Link href="/login" className="text-white">
@@ -97,7 +93,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Menu (FIXED) */}
       {isMenuOpen && (
         <div className="bg-indigo-950 md:hidden">
           <ul className="flex flex-col gap-4 p-4">
