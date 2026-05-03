@@ -20,7 +20,7 @@ Smooth animations using Animate.css
 Fully responsive (mobile + desktop)
 
 NPM Packages Used
-next,
+nextjs,
 react,
 react-dom,
 tailwindcss,
