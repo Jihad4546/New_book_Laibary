@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +47,12 @@ const Navbar = () => {
           </button>
 
           <Link href="/" className="text-lg font-bold text-white">
-            Book Shop
+             <img
+             width={240}
+             height={240}
+              src='/logo.png'>
+
+             </img>
           </Link>
         </div>
 
